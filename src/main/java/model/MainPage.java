@@ -8,22 +8,13 @@ import org.openqa.selenium.By;
 import java.util.ArrayList;
 import java.util.List;
 
-import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$$;
 
 public class MainPage {
     public List<GoodShortCard> leaderCards;
 
     public MainPage(){
-
-
-        /*leaderCard = new GoodShortCard(
-                $(nameLinkXPath),
-                $(imageXPath),
-                $(addToBasketButtonXPath)*/
         leaderCards = new ArrayList<>();
-
-
 
         ElementsCollection leaderGoods = $$(By.xpath("//article/div[1]/div[3]/ul/li"));
 

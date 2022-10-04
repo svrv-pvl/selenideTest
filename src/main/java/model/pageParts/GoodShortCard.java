@@ -4,7 +4,7 @@ import com.codeborne.selenide.SelenideElement;
 import org.openqa.selenium.By;
 
 public class GoodShortCard {
-    private SelenideElement goodLink;
+    private SelenideElement goodNameLink;
     private SelenideElement goodImage;
     private SelenideElement addToBasketButton;
 
@@ -13,12 +13,12 @@ public class GoodShortCard {
     private final By ADD_GOOD_TO_BASKET_XPATH = By.linkText("купить");
 
     public GoodShortCard(SelenideElement goodShortCardParentElement){
-        goodLink = goodShortCardParentElement.find(GOOD_NAME_LINK_XPATH);
+        goodNameLink = goodShortCardParentElement.find(GOOD_NAME_LINK_XPATH);
         goodImage = goodShortCardParentElement.find(GOOD_IMAGE_XPATH);
         addToBasketButton = goodShortCardParentElement.find(ADD_GOOD_TO_BASKET_XPATH);
     }
 
     public String getName(){
-        return goodLink.text();
+        return goodNameLink.text();
     }
 }
