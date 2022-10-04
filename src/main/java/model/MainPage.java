@@ -23,19 +23,12 @@ public class MainPage {
                 $(addToBasketButtonXPath)*/
         leaderCards = new ArrayList<>();
 
-        By nameLinkXPath = By.xpath(".//div/div[1]/a[1]");
-        By imageXPath = By.xpath(".//div/div[2]/div[1]/a/img");
-        By addToBasketButtonXPath = By.linkText("купить");
+
+
         ElementsCollection leaderGoods = $$(By.xpath("//article/div[1]/div[3]/ul/li"));
 
-        System.out.println(leaderGoods.toString());
-
         for(int i = 0; i < leaderGoods.size(); i++){
-            SelenideElement nameLink = leaderGoods.get(i).find(nameLinkXPath);
-            SelenideElement image = leaderGoods.get(i).find(imageXPath);
-            SelenideElement addToBasketButton = leaderGoods.get(i).find(addToBasketButtonXPath);
-
-            leaderCards.add(new GoodShortCard(nameLink,image, addToBasketButton));
+            leaderCards.add(new GoodShortCard(leaderGoods.get(i)));
         }
     }
 }
